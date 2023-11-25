@@ -1,21 +1,16 @@
 using EssayChecker.API.Models.Feedbacks;
+using Microsoft.EntityFrameworkCore;
 
 namespace EssayChecker.API.Brokers.StorageBroker;
 
 public partial class StorageBroker : IStorageBroker
 {
-    public async ValueTask<Feedback> InsertFeedbackAsync(Feedback feedback)
-    {
-        throw new NotImplementedException();
-    }
+    public DbSet<Feedback> Feedbacks { get; set; }
 
-    public IQueryable<Feedback> SelectAllFeedbacks()
-    {
-        throw new NotImplementedException();
-    }
-
-    public async ValueTask<Feedback> SelectFeedbackById(Guid id)
-    {
-        throw new NotImplementedException();
-    }
+    public async ValueTask<Feedback> InsertFeedbackAsync(Feedback feedback) =>
+        await InsertAsync<Feedback>(feedback);
+    public IQueryable<Feedback> SelectAllFeedbacks() =>
+        SelectAll<Feedback>();
+    public async ValueTask<Feedback> SelectFeedbackById(Guid id) =>
+        await SelectAsync<Feedback>(id);
 }
