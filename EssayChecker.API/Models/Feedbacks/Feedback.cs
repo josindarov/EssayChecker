@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using EssayChecker.API.Models.Essays;
 
 namespace EssayChecker.API.Models.Feedbacks;
@@ -10,7 +11,9 @@ public class Feedback
 
     public float Mark { get; set; }
 
+    [JsonIgnore]
     public Guid EssayId { get; set; }
 
+    [JsonIgnore]
     public Essay Essay { get; set; }
 }
