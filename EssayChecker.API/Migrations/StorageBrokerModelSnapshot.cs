@@ -45,7 +45,7 @@ namespace EssayChecker.API.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Essay");
+                    b.ToTable("Essays");
                 });
 
             modelBuilder.Entity("EssayChecker.API.Models.Feedbacks.Feedback", b =>
@@ -69,7 +69,7 @@ namespace EssayChecker.API.Migrations
                     b.HasIndex("EssayId")
                         .IsUnique();
 
-                    b.ToTable("Feedback");
+                    b.ToTable("Feedbacks");
                 });
 
             modelBuilder.Entity("EssayChecker.API.Models.Users.User", b =>
@@ -84,7 +84,7 @@ namespace EssayChecker.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("EssayChecker.API.Models.Essays.Essay", b =>

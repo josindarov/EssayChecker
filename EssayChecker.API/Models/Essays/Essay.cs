@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using EssayChecker.API.Models.Feedbacks;
 using EssayChecker.API.Models.Users;
 
@@ -13,9 +14,12 @@ public class Essay
 
     public DateTimeOffset SubmittedTime { get; set; }
 
+    [JsonIgnore]
     public Guid UserId { get; set; }
 
+    [JsonIgnore]
     public User User { get; set; }
 
+    [JsonIgnore]
     public Feedback Feedback { get; set; }
 }
